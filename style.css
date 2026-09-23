@@ -896,6 +896,72 @@ ul { list-style: none; }
   margin: 0 3rem;
 }
 
+.oe-link-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+/* Reusable "external link" card — same white-card + arrow affordance as
+   .paper-link, so any component pointing offsite reads consistently. */
+.link-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.6rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+}
+
+.link-card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.01em;
+}
+
+.link-card-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(0,0,0,0.08);
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: color var(--transition);
+}
+
+.link-card-rows .link-row:first-child {
+  border-top: none;
+}
+
+.link-row svg {
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.link-row-arrow {
+  margin-left: auto;
+  color: var(--green);
+  font-size: 1.05rem;
+  transition: transform var(--transition);
+}
+
+.link-row:hover {
+  color: var(--green);
+}
+
+.link-row:hover .link-row-arrow {
+  transform: translateX(4px);
+}
+
 /* =============================================
    Beliefs / Quote
    ============================================= */
@@ -1109,6 +1175,10 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     gap: 2rem;
+  }
+
+  .oe-link-groups {
+    grid-template-columns: 1fr;
   }
 
   .oe-stat-divider {
